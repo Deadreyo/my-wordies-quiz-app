@@ -1,0 +1,24 @@
+
+.correct-anim {
+    animation-name: correct;
+    animation-duration: 3s;
+}
+
+@keyframes correct {
+    10%   {background-color: green;}
+    20%  {background-color: yellow;}
+    25%   {background-color: green;}
+    35%  {background-color: yellow;}
+}
+
+.wrong-anim {
+    animation-name: wrong;
+    animation-duration: 3s;
+}
+
+@keyframes wrong {
+    10%   {background-color: red;}
+    20%  {background-color: yellow;}
+    25%   {background-color: red;}
+    35%  {background-color: yellow;}
+}
