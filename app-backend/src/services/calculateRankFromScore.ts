@@ -3,6 +3,7 @@ import orderArrayAscendingly from "./helpers/orderArrayAscendingly";
 
 const store = new RanksStore();
 
+/** Takes a score and returns its rank */
 export default function CalculateRankFromScore(score: number): number {
     const rankList = store.getRanks();
 

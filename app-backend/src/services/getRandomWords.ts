@@ -3,6 +3,8 @@ import WordsStore, { WordItem } from "../models/wordsModel";
 import shuffleArray from "./helpers/shuffleArray";
 
 const store = new WordsStore()
+
+/** Returns a randomized list of words, with atleast 1 element of each type, and a length set in config. */
 export default function getRandomWords(): WordItem[] {
     // get the data from store
     let data = store.getWordsList()

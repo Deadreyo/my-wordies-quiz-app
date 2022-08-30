@@ -8,6 +8,7 @@ import data from './TestData.json'
 
 export default class RanksStore {
 
+    /** Retreives the list of the ranks */
     getRanks(): number[] {
         return data.scoresList
     }
