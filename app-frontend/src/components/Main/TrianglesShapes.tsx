@@ -1,4 +1,4 @@
-import '../styles/TriangleShapes.css'
+import './TriangleShapes.css'
 
 export default function TriangleShapes() {
 

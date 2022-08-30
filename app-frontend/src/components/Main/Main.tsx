@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Navigate, Route, Routes,  } from 'react-router-dom'
-import '../styles/Main.css'
-import MenuScreen from './Menu-Screen'
-import PlayScreen from './Play-Screen'
-import ScoreScreen from './Score-Screen'
+import './Main.css'
+import MenuScreen from './Menu-Screen/Menu-Screen'
+import PlayScreen from './Play-Screen/Play-Screen'
+import ScoreScreen from './Score-Screen/Score-Screen'
 import TriangleShapes from './TrianglesShapes'
 
 export default function Main() {

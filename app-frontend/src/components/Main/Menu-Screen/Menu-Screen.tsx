@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import '../styles/Menu-Screen.css'
+import './Menu-Screen.css'
 
 export default function MenuScreen() {
 

@@ -1,4 +1,4 @@
-import '../styles/Score-Screen.css'
+import './Score-Screen.css'
 
 export default function ScoreScreen({ score }: ScoreScreenProps) {
 

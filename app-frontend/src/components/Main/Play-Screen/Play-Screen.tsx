@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../styles/Play-Screen.css'
-import * as PlayScreenAPI from '../utils/api/PlayScreenAPI'
-import shuffleArray from '../utils/helpers/shuffleArray'
+import './Play-Screen.css'
+import * as PlayScreenAPI from '../../../utils/api/PlayScreenAPI'
+import shuffleArray from '../../../utils/helpers/shuffleArray'
 import AnswerButton from './Answer-Button'
-import Loading from './Loading'
+import Loading from '../../Error-Components/Loading'
 import ProgressBar from './ProgressBar'
 
 // Decides how many questions. Maximum 15.

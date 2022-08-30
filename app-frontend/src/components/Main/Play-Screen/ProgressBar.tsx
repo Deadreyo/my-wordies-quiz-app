@@ -1,4 +1,4 @@
-import '../styles/ProgressBar.css'
+import './ProgressBar.css'
 
 export default function ProgressBar({ questionNumber, maxQuestions }: ProgressBarProps) {
 

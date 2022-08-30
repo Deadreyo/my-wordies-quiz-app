@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import '../styles/Answer-Button.css'
+import './Answer-Button.css'
 
 export default function AnswerButton({ text, correct, handleAnswerClicked, disabled }: AnswerButtonProps) {
     // Ref to point to the created button element
