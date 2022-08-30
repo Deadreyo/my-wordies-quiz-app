@@ -5,7 +5,7 @@ import wordsRouter from "./words/wordsRouter";
 
 const routes = express.Router()
 
-routes.get('/', (req, res) => {
+routes.get('/', (_req, res) => {
     res.json('Available routes: GET /words - POST /ranks')
 })
 routes.use('/words', wordsRouter)
