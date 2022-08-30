@@ -2,13 +2,12 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Play-Screen.css'
 import * as PlayScreenAPI from '../../../utils/api/PlayScreenAPI'
-import shuffleArray from '../../../utils/helpers/shuffleArray'
 import AnswerButton from './Answer-Button'
 import Loading from '../../Error-Components/Loading'
 import ProgressBar from './ProgressBar'
 
 // Decides how many questions. Maximum 15.
-const numberOfQuestions = 3;
+const numberOfQuestions = 10;
 
 export default function PlayScreen({ changeScore, changeFinish }: PlayScreenProps) {
     // This state will be responsible for the list of words.
