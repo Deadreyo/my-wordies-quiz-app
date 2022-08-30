@@ -7,9 +7,6 @@ import AnswerButton from './Answer-Button'
 import Loading from '../../Error-Components/Loading'
 import ProgressBar from './ProgressBar'
 
-// Decides how many questions. Maximum 15.
-const numberOfQuestions = config.numberOfQuestions;
-
 export default function PlayScreen({ changeScore, changeFinish }: PlayScreenProps) {
     // This state will be responsible for the list of words.
     const [words, setWords] = useState([] as PlayScreenAPI.WordListItem[])
@@ -63,10 +60,10 @@ export default function PlayScreen({ changeScore, changeFinish }: PlayScreenProp
         // A little delay to let the animation run and the user see the feedback
         setTimeout(() => {
             setChoseAlready(false)
-            if(question +1 < numberOfQuestions) {
+            if(question +1 < words.length) {
                 setQuestion(question +1)
             } else {
-                let score = +(correctAnsCount.current / numberOfQuestions * 100).toFixed(0)
+                let score = +(correctAnsCount.current / words.length * 100).toFixed(0)
                 changeScore( score )
                 changeFinish( true )
                 navigate('/score')
@@ -97,7 +94,7 @@ export default function PlayScreen({ changeScore, changeFinish }: PlayScreenProp
                 <AnswerButton text='verb' correct={pos === 'verb'} handleAnswerClicked={handleAnswerClicked} disabled={choseAlready}/>
                 <AnswerButton text='adverb' correct={pos === 'adverb'} handleAnswerClicked={handleAnswerClicked} disabled={choseAlready}/>
             </div>
-            <ProgressBar questionNumber={question} maxQuestions={numberOfQuestions} />
+            <ProgressBar questionNumber={question} maxQuestions={words.length} />
         </div>
     )
 }
