@@ -10,7 +10,7 @@ export default class WordsStore {
 
     /** Retrieves the list of the words */
     getWordsList(): WordItem[] {
-        let list = data.wordList as WordItem[]
+        let list = [...data.wordList] as WordItem[]
         return list;
     }
 }

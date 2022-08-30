@@ -2,9 +2,11 @@ import express, { Request, Response } from "express";
 import { clientErrorHandler, logError } from "./middleware/ErrorHandlers";
 import routes from "./routes";
 import config from './config/config'
+import cors from 'cors'
 
 export const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 app.use(routes)

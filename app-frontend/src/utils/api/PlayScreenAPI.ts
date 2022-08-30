@@ -1,10 +1,9 @@
-import shuffleArray from '../helpers/shuffleArray';
-import testData from './TestData.json'
+import config from "../config";
 
-export async function getWordList() {
-    const data = testData.wordList as WordListItem[]
-    let shuffledArr = shuffleArray(data)
-    return shuffledArr
+export async function getWordList(): Promise<WordListItem[]> {
+    const response = await fetch(config.API_URL+"/words")
+    const data = await response.json() 
+    return data as WordListItem[]
 }
 
 export interface WordListItem {

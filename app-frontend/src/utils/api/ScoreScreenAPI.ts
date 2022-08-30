@@ -1,11 +1,18 @@
-import orderArrayDescendingly from "../helpers/orderArrayDescendingly";
-import testData from './TestData.json'
+import config from "../config"
 
 export async function getRank(score: number): Promise<number> {
-    const data = testData.scoresList
-    let orderedArr = orderArrayDescendingly(data)
-    const rank = orderedArr.findIndex( (val) => score >= val)
-    
-    // increment one since it is 0-indexed...
-    return rank + 1
+    const payload = {
+        score
+    }
+
+    const request = await fetch(config.API_URL+"/ranks", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    })
+
+    const data = await request.json()
+    return data.rank as number
 }
