@@ -4,7 +4,7 @@ export default function Header() {
 
     return (
         <header>
-            <p>My Wordies Quiz!</p>
+            <h2>My Wordies Quiz!</h2>
         </header>
     )
 }
