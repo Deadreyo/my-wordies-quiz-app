@@ -10,7 +10,7 @@ import ProgressBar from './ProgressBar'
 // Decides how many questions. Maximum 15.
 const numberOfQuestions = 3;
 
-export default function PlayScreen({ changeScore }: PlayScreenProps) {
+export default function PlayScreen({ changeScore, changeFinish }: PlayScreenProps) {
     // This state will be responsible for the list of words.
     const [words, setWords] = useState([] as PlayScreenAPI.WordListItem[])
 
@@ -51,6 +51,12 @@ export default function PlayScreen({ changeScore }: PlayScreenProps) {
         
     }, [])
 
+    // On mounting, also reset finished to false.
+    // This is useful for when a player finished the game but wants to play again.
+    useEffect( () => {
+        changeFinish(false)
+    }, [])
+
 
     function handleAnswerClicked(correct: boolean) {
         setChoseAlready(true)
@@ -64,6 +70,7 @@ export default function PlayScreen({ changeScore }: PlayScreenProps) {
             } else {
                 let score = +(correctAnsCount.current / numberOfQuestions * 100).toFixed(0)
                 changeScore( score )
+                changeFinish( true )
                 navigate('/score')
             }
         }, 2000);
@@ -99,4 +106,5 @@ export default function PlayScreen({ changeScore }: PlayScreenProps) {
 
 interface PlayScreenProps {
     changeScore: (score: number) => void
+    changeFinish: (finished: boolean) => void
 }
