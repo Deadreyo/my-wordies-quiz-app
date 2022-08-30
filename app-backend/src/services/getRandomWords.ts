@@ -1,3 +1,4 @@
+import config from "../config/config";
 import WordsStore, { WordItem } from "../models/wordsModel";
 import shuffleArray from "./helpers/shuffleArray";
 
@@ -16,9 +17,9 @@ export default function getRandomWords(): WordItem[] {
         data.splice( data.indexOf(found), 1 )
     });
     
-    // then add more elements, and take only 10
+    // then add more elements, and take only ${numberOfWordsReturned} value from config (default 10)
     newData.push(...data)
-    newData.length = 10;
+    newData.length = config.numberOfWordsReturned;
 
     // shuffle the data
     let shuffledData = shuffleArray(newData)

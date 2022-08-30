@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
-import { clientErrorHandler, logError } from "./middleware/ErrorMiddlewares";
+import { clientErrorHandler, logError } from "./middleware/ErrorHandlers";
 import routes from "./routes";
+import config from './config/config'
 
 const app = express()
 
@@ -10,6 +11,6 @@ app.use(routes)
 app.use(logError)
 app.use(clientErrorHandler)
 
-app.listen(4000, () => {
-    console.log('The application is listening on port 4000!')
+app.listen(config.port, () => {
+    console.log(`The application is listening on port ${config.port}!`)
 })
