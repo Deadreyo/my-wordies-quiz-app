@@ -1,7 +1,10 @@
+import shuffleArray from '../helpers/shuffleArray';
 import testData from './TestData.json'
 
 export async function getWordList() {
-    return testData.wordList as WordListItem[]
+    const data = testData.wordList as WordListItem[]
+    let shuffledArr = shuffleArray(data)
+    return shuffledArr
 }
 
 export interface WordListItem {

@@ -1,0 +1,21 @@
+
+.score-screen-container {
+    background-color: orange;
+    height: 100%;
+    width: 100%;
+    border-radius: 7%;
+    padding-top: 100px;
+    word-wrap: break-word;
+}
+
+.score-screen-container > h1 {
+    color: #083f83;
+}
+
+.score-screen-score {
+    color: #780b52;
+}
+
+.score-screen-container .button {
+    margin-top: 30px;
+}

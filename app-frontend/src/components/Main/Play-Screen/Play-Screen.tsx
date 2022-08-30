@@ -37,14 +37,12 @@ export default function PlayScreen({ changeScore, changeFinish }: PlayScreenProp
     /*
         On mounting:
         - Retreives the items from the API.
-        - Shuffles the items.
         - Set the words state.
     */
     useEffect( () => {
         async function getWords () {
             let fetchedList = await PlayScreenAPI.getWordList()
-            let shuffledArr = shuffleArray(fetchedList)
-            setWords(shuffledArr)
+            setWords(fetchedList)
         }
 
         getWords()
