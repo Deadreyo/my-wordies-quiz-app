@@ -1,0 +1,17 @@
+
+.progress-bar-container {
+    position: absolute;
+    top: 15%;
+    width: 100%
+}
+
+.progress-bar {
+    width: 70%;
+    height: 46px;
+}
+
+.progress-bar-text {
+    position: absolute;
+    top: -10px;
+    width: 100%;
+}

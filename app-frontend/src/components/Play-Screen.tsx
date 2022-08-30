@@ -5,6 +5,7 @@ import * as PlayScreenAPI from '../utils/api/PlayScreenAPI'
 import shuffleArray from '../utils/helpers/shuffleArray'
 import AnswerButton from './Answer-Button'
 import Loading from './Loading'
+import ProgressBar from './ProgressBar'
 
 // Decides how many questions. Maximum 15.
 const numberOfQuestions = 3;
@@ -91,6 +92,7 @@ export default function PlayScreen({ changeScore }: PlayScreenProps) {
                 <AnswerButton text='verb' correct={pos === 'verb'} handleAnswerClicked={handleAnswerClicked} disabled={choseAlready}/>
                 <AnswerButton text='adverb' correct={pos === 'adverb'} handleAnswerClicked={handleAnswerClicked} disabled={choseAlready}/>
             </div>
+            <ProgressBar questionNumber={question} maxQuestions={numberOfQuestions} />
         </div>
     )
 }
