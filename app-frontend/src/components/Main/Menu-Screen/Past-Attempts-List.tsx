@@ -2,6 +2,12 @@ import './Past-Attempts-List.css'
 
 export default function PastAttemptsList({ pastAttempts }: PreviousRanksListProps) {
     
+    /*
+        Note:
+        - Using array index as key is an anti-pattern,
+        BUT in this use case, the array never changes, so it is acceptable.
+    */
+
     return (
         <div className="table-div">
             <table>
@@ -15,7 +21,7 @@ export default function PastAttemptsList({ pastAttempts }: PreviousRanksListProp
                 <tbody>
                 {
                     pastAttempts.map( (val, i) => (
-                        <tr>
+                        <tr key={i}>
                             <td>{i+1}</td>
                             <td>{val}</td>
                         </tr>
