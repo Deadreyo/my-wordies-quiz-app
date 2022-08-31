@@ -9,6 +9,10 @@
     width: 70%;
     height: 46px;
 }
+.progress-bar::-moz-progress-bar { 
+    background: #0078d4;
+    height: 47px;
+}
 
 .progress-bar-text {
     position: absolute;
